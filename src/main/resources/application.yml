@@ -1,0 +1,30 @@
+spring:
+  profiles:
+    active: prod
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/db_user
+    username: root
+    password: mysql
+  server:
+    port: 8080
+  servlet:
+    path: /springboot
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  thymeleaf:
+    prefix:
+      classpath: /templates/
+  mvc:
+    view:
+      prefix: /templates/
+      suffix: .html
+    static-path-pattern: /static/**
+
+mybatis:
+  configuration:
+    cache-enabled: true
+  type-aliases-package: com.xiaoy.user.entity
+  mapper-locations: classpath:mapper/*/*.xml

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xiaoy.user.mapper.usermapper.UserMapper">
+    <select id="getUserByName" resultType="com.xiaoy.user.entity.users.User">
+        select * from t_users where user_name = #{user_name} limit 1
+    </select>
+
+    <insert id="addUser">
+        insert into t_users(user_name,password,perms) values (#{user.user_name},#{user.password},#{user.perms})
+    </insert>
+</mapper>
